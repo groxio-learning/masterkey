@@ -1,5 +1,4 @@
 defmodule MasterKey.Game.Score do
-  defstruct [:reds, :whites]
   
   def new(answer, guess) do
     %{ reds: reds(answer, guess), whites: whites(answer, guess)}

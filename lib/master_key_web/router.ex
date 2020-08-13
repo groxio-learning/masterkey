@@ -18,6 +18,11 @@ defmodule MasterKeyWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    
+    live "/game", GameLive
+    if Mix.env() in [:dev, :test] do
+      live "/game/:answer", GameLive
+    end
   end
 
   # Other scopes may use custom stacks.
