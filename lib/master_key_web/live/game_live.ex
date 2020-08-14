@@ -47,7 +47,7 @@ defmodule MasterKeyWeb.GameLive do
   
   def render(assigns) do
     ~L"""
-      <h1>Welcome to MasterKey! </h1>
+      <h1>Welcome to MasterKey!</h1>
 
       <%= live_component(@socket, BoardComponent, game: @game) %>
       <%= render_form(assigns) %>
@@ -56,7 +56,7 @@ defmodule MasterKeyWeb.GameLive do
   
   def render_form(assigns) do
     ~L"""
-      <%= form_for @changeset, "#", [as: :guess, phx_change: :validate, phx_submit: :guess] ,fn f -> %>
+      <%= form_for @changeset, "#", [as: :guess, id: :game_form, phx_change: :validate, phx_submit: :guess] ,fn f -> %>
         <label>
           Guess: <%= text_input f, :guess %>
         </label>

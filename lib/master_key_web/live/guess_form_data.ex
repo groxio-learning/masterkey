@@ -19,7 +19,7 @@ defmodule MasterKeyWeb.GuessFormData do
   end
   
   def check_guess_errors(field, false) do
-    [{field, "Guesses must be four numbers"}]
+    [{field, "Guesses must be four numbers from 1-8"}]
   end
   def check_guess_errors(_field, true), do: []
 end
